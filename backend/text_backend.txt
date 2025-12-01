@@ -6,3 +6,11 @@ npm i express (Servidor Node.js)
 npm install cors (Permitir peticiones desde el frontend)
 npm install --save-dev nodemon (para npm run dev)
 
+***CARPETAS BACKEND***
+- quieries.sql -> quieries de creacion de tablas + insert into
+- quieries/js -> quieries (get/post/put/delete)
+- models/js -> extrae datos BBDD
+- controllers/js -> lógica de negocio
+- routes/js -> rutas definidas con su estructura
+- app.js -> punto de entrada/ rutas / middlewares
+

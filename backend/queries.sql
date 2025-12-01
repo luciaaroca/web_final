@@ -14,7 +14,8 @@ CREATE TABLE tshirts (
   sizes VARCHAR(50),
   price NUMERIC(10,2) NOT NULL,
   image TEXT NOT NULL,
-  type VARCHAR(50)
+  type VARCHAR(50),
+  league_name VARCHAR(100)
 );
 -- Crear tabla orders
 CREATE TABLE orders (
@@ -57,6 +58,27 @@ INSERT INTO users (userName, email, password, role) VALUES
 ('Raul', 'raul@example.com', 'userpass1', 'user');
 
 --Tshirts
-INSERT INTO users (userName, email, password, role) VALUES
-('Lucia', 'lucia@example.com', 'password123', 'admin'),
-('Lucia', 'lucia@example.com', 'password123', 'admin');
+INSERT INTO tshirts (name , description,  sizes, price, image, type, league_name) VALUES
+('Real Oviedo', 'Equipación local del Real Oviedo 2025/26-Azul', 'S,M,L,XL,XXL', 20.00, 'https://cdn.footballkitarchive.com/2025/09/12/P94AhO1lsobpVhO.jpg','Liga','La Liga' ),
+('Real Oviedo', 'Equipación local del Real Oviedo 2025/26 - Rosa/negro', 'S,M,L,XL,XXL', 20.00, 'https://cdn.footballkitarchive.com/2025/08/03/B8UwujyajvREHj4.jpg','Liga','La Liga' ),
+('Aston Villa', 'Equipación Aston Villa 2025/26 - 	Claret/Azul cielo', 'S,M,L,XL,XXL', 20.00, 'https://cdn.footballkitarchive.com/2025/07/19/oHl9m2AVpKx9AcP.jpg','Liga','Premier League'),
+('Fluminense', 'Camiseta de la equipación local del Fluminense FC 2025', 'S,M,L,XL,XXL', 20.00, 'https://cdn.footballkitarchive.com/2025/03/24/318RpnxyuzBf38j.jpg','Retro', NULL),
+('Fluminense', 'Camiseta de la equipación local del Fluminense FC 2025', 'S,M,L,XL,XXL', 20.00, 'https://cdn.footballkitarchive.com/2025/03/24/318RpnxyuzBf38j.jpg','Especial', NULL);
+
+--Orders
+INSERT INTO orders (user_id) VALUES
+(1),
+(2),
+(2);
+
+--favorites
+INSERT INTO favorites  (user_id, tshirt_id ) VALUES
+(3, 3),
+(3, 4),
+(2, 4);
+
+--orders-tshirts
+INSERT INTO order_tshirts (order_id, tshirt_id, quantity) VALUES
+(1, 2, 1),
+(1, 3, 2),
+(2, 1, 1);
