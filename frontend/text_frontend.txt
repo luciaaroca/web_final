@@ -1,0 +1,11 @@
+***INSTALACIONES DE FRONTEND****
+npm install create-react-component-folder --save-dev **
+npm i uuid  (identificadores únicos universales)
+npm i normalize.css --> importar en main.jsx
+npm i react-router-dom (Navegación y rutas)
+npm i axios (llamadas API)
+npm i sass (Estilos con SASS/SCSS)
+
+***CARPETAS FRONTEND****
+npx crcf src/components/Header Main Footer -j  --notest -f
+npx crcf src/components/Header/Nav -j  --notest -f

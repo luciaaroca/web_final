@@ -1,0 +1,8 @@
+*****COMANDOS BACKEND*****
+npm init -y (crear package.json)
+npm i pg (pg admin)
+npm i dotenv (leer .env)
+npm i express (Servidor Node.js)
+npm install cors (Permitir peticiones desde el frontend)
+npm install --save-dev nodemon (para npm run dev)
+

@@ -1,0 +1,13 @@
+***INSTALACIONES GLOBALES***
+npm i axios (API)
+npm install cors 
+npm i express (Servidor Node.js)
+npm i dotenv
+npm i pg
+npm install concurrently --save-dev (ejecutar varios comandos al mismo tiempo.)
+
+
+Comandos de ->concurrently 
+->npm run dev --prefix backend
+->npm run dev --prefix frontend
+->npm run start:all -> para ambos
