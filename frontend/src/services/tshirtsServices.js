@@ -25,3 +25,14 @@ export const getTshirtsByName = async(name)=>{
         throw error;
     }  
 }
+
+export const getTshirtsById = async(tshirt_id)=>{
+    try {
+        const response = await axios.get(`${API_URL}/api/tshirts/id/${tshirt_id}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching all authors:', error);
+        throw error;
+    }  
+}
+
