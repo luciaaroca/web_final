@@ -12,7 +12,7 @@ const LigaItem = ({liga}) => {
         style={{ width: "200px", height: "auto" }}
       />
        <Link to={`/detail/${liga.tshirt_id}`}>Ver detalle</Link>
-    </article>;;
+    </article>;
 };
 
 export default LigaItem;

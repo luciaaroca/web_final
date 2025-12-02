@@ -4,6 +4,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 import Home from './Home/Home'
 import TshirtDetail from './TshirtDetail/TshirtDetail'
 import LigasContainer from './LigasContainer/LigasContainer'
+import RetroContainer from "./RetroContainer/RetroContainer"
 
 const Main = () => {
   return <main>
@@ -11,6 +12,7 @@ const Main = () => {
       <Route path='/'element={<Home/>}/>
       <Route path='/detail/:id'element={<TshirtDetail/>}/>
       <Route path='/ligas'element={<LigasContainer/>}/>
+      <Route path='/retro'element={<RetroContainer/>}/>
     </Routes>
   </main>;
 };

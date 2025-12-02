@@ -16,3 +16,7 @@ npx crcf src/components/Main/TshirtDetail -j  --notest -f
 npx crcf src/components/Main/LigasContainer -j  --notest -f
 npx crcf src/components/Main/LigasContainer/Select LigaList -j  --notest -f
 npx crcf src/components/Main/LigasContainer/LigaList/LigaItem -j  --notest -f
+npx crcf src/components/Main/RetroList -j  --notest -f
+npx crcf src/components/Main/RetroContainer/RetroList -j  --notest -f
+npx crcf src/components/Main/RetroList -j  --notest -f
+npx crcf src/components/Main/RetroContainer/RetroList/RetroItem -j  --notest -f

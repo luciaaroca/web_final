@@ -57,4 +57,14 @@ export const getAllLigaTshirtsByName = async (league_name) => {
     }
 };
 
+export const getRetro = async () => {
+   
+    try {
+        const response = await axios.get(`${API_URL}/api/tshirts/type/Retro`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching all authors:', error);
+        throw error;
+    }
+};
 
