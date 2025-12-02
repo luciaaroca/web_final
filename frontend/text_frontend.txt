@@ -9,3 +9,7 @@ npm i sass (Estilos con SASS/SCSS)
 ***CARPETAS FRONTEND****
 npx crcf src/components/Header Main Footer -j  --notest -f
 npx crcf src/components/Header/Nav -j  --notest -f
+
+npx crcf src/components/Main/Home/Search TshirtList -j  --notest -f
+npx crcf src/components/Main/Home/TshirtList/TshirtItem -j  --notest -f
+npx crcf src/components/Main/TshirtDetail -j  --notest -f

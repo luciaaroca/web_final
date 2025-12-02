@@ -1,25 +1,25 @@
 const queries = {
 getAllTshirts:`
-SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
+SELECT t.tshirt_id,t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
 FROM tshirts AS t
  `,
 getTshirtsByType:`
-SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
+SELECT t.tshirt_id, t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
 FROM tshirts AS t
 WHERE t.type = $1
 `,
 getTshirtsByName:`
-SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
+SELECT t.tshirt_id, t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
 FROM tshirts AS t
-WHERE t.name = $1
+WHERE REPLACE(LOWER(t.name), ' ', '') LIKE CONCAT('%', REPLACE(LOWER($1), ' ', ''), '%');
 `,
-// getLigaTshirts: `
-//   SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
-//   FROM tshirts AS t 
-//   WHERE type = 'Liga'
-// `,
+getTshirtsById: `
+  SELECT t.tshirt_id,t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
+  FROM tshirts AS t 
+  WHERE t.tshirt_id = $1;
+`,
 getTshirtsByLeagueName: `
-  SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
+  SELECT t.tshirt_id,t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
   FROM tshirts AS t
   WHERE type = 'Liga'
   AND league_name = $1

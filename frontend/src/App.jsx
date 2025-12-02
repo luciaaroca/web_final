@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom'
+
 import './App.css'
+import Header from './components/Header/Header.jsx'
+import Main from './components/Main/Main.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 function App() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch('http://localhost:3000/api/test')
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.error(err));
-  }, []);
-
-   return (
-    <div>
-      <h1>Prueba Backend → Frontend</h1>
-      {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Cargando...'}
-    </div>
-  );
+  return(
+  <>
+  <BrowserRouter>
+      <Header/>
+      <Main/>
+      <Footer/>
+  </BrowserRouter>
+  </>
+  )
 }
 export default App
