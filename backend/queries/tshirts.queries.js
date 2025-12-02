@@ -13,9 +13,14 @@ SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
 FROM tshirts AS t
 WHERE t.name = $1
 `,
+// getLigaTshirts: `
+//   SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
+//   FROM tshirts AS t 
+//   WHERE type = 'Liga'
+// `,
 getTshirtsByLeagueName: `
-  SELECT *
-  FROM tshirts
+  SELECT t.name, t.description,t.sizes,t.price, t.image,t.type, t.league_name
+  FROM tshirts AS t
   WHERE type = 'Liga'
   AND league_name = $1
 `
