@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TshirtItem = ({tshirt}) => {
   
@@ -12,6 +13,7 @@ const TshirtItem = ({tshirt}) => {
         alt={tshirt.name}
         style={{ width: "200px", height: "auto" }}
       />
+       <Link to={`/detail/${tshirt.tshirt_id}`}>Ver detalle</Link>
     </article>;
 };
 

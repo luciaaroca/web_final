@@ -3,12 +3,14 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 
 import Home from './Home/Home'
 import TshirtDetail from './TshirtDetail/TshirtDetail'
+import LigasContainer from './LigasContainer/LigasContainer'
 
 const Main = () => {
   return <main>
     <Routes>
       <Route path='/'element={<Home/>}/>
-      <Route path='/detail'element={<TshirtDetail/>}/>
+      <Route path='/detail/:id'element={<TshirtDetail/>}/>
+      <Route path='/ligas'element={<LigasContainer/>}/>
     </Routes>
   </main>;
 };

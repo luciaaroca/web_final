@@ -4,11 +4,11 @@ import TshirtItem from "./TshirtItem/TshirtItem";
 const TshirtList = ({tshirts}) => {
   const renderCard = () => tshirts.map(tshirt => <TshirtItem key={tshirt.tshirt_id} tshirt={tshirt}/>)
 
-  return <section>
-      <div>
+  return <div>
+      <section>
       {renderCard()}
-      </div>
-    </section>;
+      </section>
+    </div>;
 };
 
 export default TshirtList;

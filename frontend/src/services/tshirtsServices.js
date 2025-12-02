@@ -35,4 +35,26 @@ export const getTshirtsById = async(tshirt_id)=>{
         throw error;
     }  
 }
+export const getAllLigaTshirts = async () => {
+   
+    try {
+        const response = await axios.get(`${API_URL}/api/tshirts/type/Liga`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching all authors:', error);
+        throw error;
+    }
+};
+
+export const getAllLigaTshirtsByName = async (league_name) => {
+   
+    try {
+        const response = await axios.get(`${API_URL}/api/tshirts/type/Liga/${league_name}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching all authors:', error);
+        throw error;
+    }
+};
+
 
