@@ -5,6 +5,7 @@ import Home from './Home/Home'
 import TshirtDetail from './TshirtDetail/TshirtDetail'
 import LigasContainer from './LigasContainer/LigasContainer'
 import RetroContainer from "./RetroContainer/RetroContainer"
+import EspecialContainer from "./EspecialContainer/EspecialContainer"
 
 const Main = () => {
   return <main>
@@ -13,6 +14,7 @@ const Main = () => {
       <Route path='/detail/:id'element={<TshirtDetail/>}/>
       <Route path='/ligas'element={<LigasContainer/>}/>
       <Route path='/retro'element={<RetroContainer/>}/>
+      <Route path='/especiales'element={<EspecialContainer/>}/>
     </Routes>
   </main>;
 };

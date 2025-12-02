@@ -67,4 +67,14 @@ export const getRetro = async () => {
         throw error;
     }
 };
+export const getEspecial = async () => {
+   
+    try {
+        const response = await axios.get(`${API_URL}/api/tshirts/type/Especial`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching all authors:', error);
+        throw error;
+    }
+};
 
