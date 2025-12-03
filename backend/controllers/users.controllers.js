@@ -23,18 +23,19 @@ async function login(req, res) {
         );
         res.cookie('token', token, {
             httpOnly: true,
-            secure: false, // cambiar a true en producción
+            secure: false, 
             sameSite: 'lax',
-            maxAge: 3600000 // 1 hora
+            maxAge: 3600000 
         });
-        // Devuelve JSON y el frontend se encarga del dashboard
+        // Devuelve JSON 
         res.json({
             msg: 'Login exitoso',
             user: {
                 id: user.user_id,
                 username: user.username,
                 email: user.email
-            }
+            },
+            token //para que nos devuelva el TOKEN del usuario
         });
     } catch (error) {
         res.status(500).json('Error en el inicio de sesión');

@@ -5,6 +5,7 @@ npm i normalize.css --> importar en main.jsx
 npm i react-router-dom (Navegación y rutas)
 npm i axios (llamadas API)
 npm i sass (Estilos con SASS/SCSS)
+npm install react-loader-spinner
 
 ***CARPETAS FRONTEND****
 npx crcf src/components/Header Main Footer -j  --notest -f
@@ -27,3 +28,12 @@ npx crcf src/components/Main/LogIn SignUp -j  --notest -f
 npx crcf src/components/Main/LogIn/LogInForm -j  --notest -f
 npx crcf src/components/Main/SignUp/SignUpForm -j  --notest -f
 npx crcf src/components/Main/Profile -j  --notest -f
+
+dani_10
+dani@gmail.com
+1234567dDd
+
+
+vivi_123
+vivi@gmail.com
+1234567vVv

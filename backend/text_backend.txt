@@ -18,3 +18,8 @@ npm install jsonwebtoken
 - routes/js -> rutas definidas con su estructura
 - app.js -> punto de entrada/ rutas / middlewares
 
+
+Usuario ejemplo:
+  "email": "lucia@email.com",
+  "password": "123456"
+

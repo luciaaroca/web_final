@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'; //para que cuando termine de hacer algo nos redirija a otro componente
 import {login } from '../../../../services/userServices'
+import Swal from 'sweetalert2';
 
 const LogInForm = () => {
   const [userData, setUserData] = useState({ email: '', password: '' });
@@ -19,7 +20,11 @@ const LogInForm = () => {
     e.preventDefault();
     try {
       const res = await login(userData); // Llama al servicio de login
-      setMsg(res.msg || 'Login exitoso');
+      Swal.fire({
+        title: "Login Exitoso",
+        text: res.msg || "¡Bienvenido!",
+        icon: "success",
+        })
       setTimeout(() => navigate('/profile'), 1000); // Redirige al perfil
     } catch (error) {
       setMsg(error.msg || 'Credenciales inválidas');

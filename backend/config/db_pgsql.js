@@ -1,6 +1,9 @@
-const { Pool } = require('pg');
+import pkg from 'pg';  // import completo
+const { Pool } = pkg;  // extraemos Pool
 
-require('dotenv').config()
+import dotenv from 'dotenv';
+dotenv.config();
+//require('dotenv').config()
 // console.log(process.env);
 const isProduction = process.env.NODE_ENV === 'production';
 // Datos de conexión
@@ -14,4 +17,5 @@ const pool = new Pool({
 })
 
 
-module.exports = pool; //exportando
+//module.exports = pool; //exportando
+export default pool;

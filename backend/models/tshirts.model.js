@@ -4,16 +4,16 @@ import pool from '../config/db_pgsql.js';
 //GET -> ALL 
 
 const getAllTshirts = async () => {
-    let client, result; //declarar variables (client= conexión a la base de datos./ result =guardará el resultado final)
+    let client, result; 
     try {
-        //client: objeto que permite ejecutar las query 
-        client = await pool.connect(); // pool(pool de conexiones de PostgreSQL) /connect()Espera a abrir conexion
-        const data = await client.query(queries.getAllTshirts) //ejecuta la QUERY (definid en quieries.js)
-        result = data.rows //array de objetos con filas de la tabla (datos limpios - "SELECT"-> guardado en result
+        
+        client = await pool.connect(); 
+        const data = await client.query(queries.getAllTshirts) 
+        result = data.rows 
     } catch (err) {
         console.log(err);
         throw err;
-    } finally {//cerramos la conexión 
+    } finally {
         client.release();
     }
     return result
@@ -24,14 +24,14 @@ const getAllTshirts = async () => {
 const getTshirtsByType = async (type) => {
     let client, result; 
     try {
-        client = await pool.connect(); // Esperar conexión de base de datos (client)
-        const data = await client.query(queries.getTshirtsByType, [type]) //esto lanza la querie sql (la tenemos en quieries)
-        result = data.rows //resultado limpio
+        client = await pool.connect(); 
+        const data = await client.query(queries.getTshirtsByType, [type]) 
+        result = data.rows 
         
     } catch (err) {
         console.log(err);
         throw err;
-    } finally { //cerramos la conexión -> es muy util en bases de datos
+    } finally { 
         client.release();
     }
     return result
@@ -42,14 +42,14 @@ const getTshirtsByType = async (type) => {
 const getTshirtsByName = async (name) => {
     let client, result; 
     try {
-        client = await pool.connect(); // Esperar conexión de base de datos (client)
-        const data = await client.query(queries.getTshirtsByName, [name]) //esto lanza la querie sql (la tenemos en quieries)
-        result = data.rows //resultado limpio
+        client = await pool.connect(); 
+        const data = await client.query(queries.getTshirtsByName, [name]) 
+        result = data.rows 
         
     } catch (err) {
         console.log(err);
         throw err;
-    } finally { //cerramos la conexión -> es muy util en bases de datos
+    } finally { 
         client.release();
     }
     return result
@@ -61,7 +61,7 @@ const getTshirtsById = async (tshirt_id) => {
     try {
         client = await pool.connect();
         const data = await client.query(queries.getTshirtsById,[tshirt_id]);
-        result = data.rows; // aquí están todas las camisetas de esa liga
+        result = data.rows; 
     } catch (err) {
         console.log(err);
         throw err;
@@ -71,9 +71,6 @@ const getTshirtsById = async (tshirt_id) => {
     return result;
 
 }
-
-
-
 
 
 //GET -> LEAGUE NAME
@@ -83,7 +80,7 @@ const getTshirtsByLeagueName  = async (league_name) => {
     try {
         client = await pool.connect();
         const data = await client.query(queries.getTshirtsByLeagueName,[league_name]);
-        result = data.rows; // aquí están todas las camisetas de esa liga
+        result = data.rows; 
     } catch (err) {
         console.log(err);
         throw err;
@@ -93,10 +90,6 @@ const getTshirtsByLeagueName  = async (league_name) => {
     return result;
 
 }
-
-
-
-
 
 const tshirts = {
    getAllTshirts,

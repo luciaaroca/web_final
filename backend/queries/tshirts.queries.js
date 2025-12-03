@@ -25,4 +25,4 @@ getTshirtsByLeagueName: `
   AND league_name = $1
 `
 }
-module.exports = queries;
+export default queries;

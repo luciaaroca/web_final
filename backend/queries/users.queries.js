@@ -10,4 +10,4 @@ const queries = {
     RETURNING *;
     `,
 }
-module.exports = queries;
+export default queries;

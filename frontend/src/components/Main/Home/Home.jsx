@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { Link } from 'react-router-dom'
 
+
 import TshirtList from "./TshirtList/TshirtList" //Importamos Componente: TshirtList (renderizado)
 import Search from "./Search/Search" //Importamos Componente: Search: input + botón
 
@@ -10,11 +11,13 @@ const Home = () => {
   //ESTADOS
   
   const [tshirts, setTshirts] = useState([]); //TSHIRTS mostrados API
-  
+
+
   //LLAMADA API
   
   useEffect(()=>{
     const fetchTshirts = async () => {
+
       try{
         const data = await getAllTshirts();
         setTshirts(data);

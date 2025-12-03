@@ -29,6 +29,10 @@ app.use("/api/tshirts", tshirtsRoutes); //definimos la estructura de la url
 import userRoutes from './routes/user.routes.js'
 app.use("/api/users",userRoutes);
 
+//FAVORITES
+import favoritesRoutes from './routes/favorites.routes.js'
+app.use("/api/favorites",favoritesRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Servidor backend escuchando en http://localhost:${PORT}`);
