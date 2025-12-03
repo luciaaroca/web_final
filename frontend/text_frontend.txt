@@ -23,3 +23,7 @@ npx crcf src/components/Main/RetroContainer/RetroList/RetroItem -j  --notest -f
 npx crcf src/components/Main/EspecialContainer -j  --notest -f
 npx crcf src/components/Main/EspecialContainer/EspecialList -j  --notest -f
 npx crcf src/components/Main/EspecialContainer/EspecialList/EspecialItem -j  --notest -f
+npx crcf src/components/Main/LogIn SignUp -j  --notest -f
+npx crcf src/components/Main/LogIn/LogInForm -j  --notest -f
+npx crcf src/components/Main/SignUp/SignUpForm -j  --notest -f
+npx crcf src/components/Main/Profile -j  --notest -f

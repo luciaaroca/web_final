@@ -66,7 +66,22 @@ async function signUp(req, res) {
     }
 }
 
+//LOG OUT
+async function logout(req, res) {
+    try {
+        res.clearCookie('token', {
+            httpOnly: true,
+            secure: false, // true en producción
+            sameSite: 'lax'
+        });
+        res.status(200).json({ msg: 'Logout exitoso' });
+    } catch (error) {
+        res.status(400).json({ msg: error.message });
+    }
+}
+
 export default {
 login,
-signUp
+signUp,
+logout
 };
