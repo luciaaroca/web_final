@@ -3,8 +3,7 @@ CREATE TABLE users (
   user_id serial NOT NULL PRIMARY KEY, 
   userName varchar(45) NOT NULL, 
   email varchar(100) NOT NULL UNIQUE, 
-  password varchar(350)  NOT NULL,
-  role varchar(100) NOT NULL
+  password varchar(350)  NOT NULL
 );
 -- Crear tabla tshirts
 CREATE TABLE tshirts (
