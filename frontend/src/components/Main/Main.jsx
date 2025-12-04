@@ -10,7 +10,9 @@ import LogIn from './LogIn/LogIn'
 import SignUp from './SignUp/SignUp'
 import Profile from './Profile/Profile'
 import FavoriteContainer from "./FavoriteContainer/FavoriteContainer";
-import FavoriteDetail from "./FavoriteDetail/FavoriteDetail"
+import FavoriteDetail from "./FavoriteDetail/FavoriteDetail";
+import CarritoList from "./CarritoList/CarritoList"
+import  Contact from "./Contact/Contact";
 
 const Main = () => {
   return <main>
@@ -23,8 +25,10 @@ const Main = () => {
       <Route path='/login'element={<LogIn/>}/>
       <Route path='/signup'element={<SignUp/>}/>
       <Route path='/profile'element={<Profile/>}/>
-      <Route path='/favorites'element={<FavoriteContainer />}/>
-      <Route path='/detail/:id/favorites'element={<FavoriteDetail />}/>
+      <Route path='/favorites'element={<FavoriteContainer/>}/>
+      <Route path='/detail/:id/favorites'element={<FavoriteDetail/>}/>
+      <Route path='/carrito'element={<CarritoList/>}/>
+      <Route path ='/contact' element={<Contact/>}/>
 
     </Routes>
   </main>;

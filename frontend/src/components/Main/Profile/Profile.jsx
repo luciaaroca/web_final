@@ -1,4 +1,4 @@
-import React,{ useState, useEffect,useContext} from "react";
+import React,{ useEffect,useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import {logout } from '../../../services/userServices'
@@ -8,9 +8,7 @@ import { AuthContext } from '../../../App'
 
 const Profile = () => {
   const navigate = useNavigate();
-  //const [Logged, IsLogged] = useState(null); // null = cargando, true/false = login
   const { isLogged, setIsLogged } = useContext(AuthContext); 
-  
 
   //Comprobar si estamos logueados
   useEffect(() => {
@@ -25,23 +23,19 @@ const Profile = () => {
       }
     };
     checkLogin();
-  }, [setIsLogged]);
-  //Hacer Log Out
-  const handleLogout = async () => {
+    }, [setIsLogged]);
+
+    //Hacer Log Out
+    const handleLogout = async () => {
     try {
       await logout();
       setIsLogged(false);
       navigate("/");
     } catch (error) {
       console.error("Error en logout", error);
-    }
-  };
+      }
+    };
   return <div>
-    {/* <h1>Esto es tu perfil</h1>
-    <button onClick={handleLogout}>Cerrar sesión</button>
-    <button><Link to="/">Home</Link></button>
-    <button><Link to="/favorites">Favoritos</Link></button> */}
-    {/* <button><Link to="/shop">Carrito</Link></button> */}
       <div>
       {isLogged ? (
         <div>
