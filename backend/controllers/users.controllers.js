@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+//import jwt_decode from 'jwt-decode'; 
 
 import userModel from '../models/users.model.js';
 
@@ -17,7 +18,7 @@ async function login(req, res) {
             return res.status(401).json({ msg: 'Credenciales inválidas' });
         }
         const token = jwt.sign(
-            { id: user.user_id }, 
+            { id: user.user_id, email: user.email}, 
             process.env.MY_TOKEN_SECRET, 
             { expiresIn: '1h' }
         );
