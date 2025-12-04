@@ -2,7 +2,7 @@ import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
 
 import {getTshirtsById} from "../../../services/tshirtsServices";
-import { postFavorites } from "../../../services/favoritesServices";
+import { postFavorites , getAllFavoritesByUser } from "../../../services/favoritesServices";
 
 const TshirtDetail = () => {
  const { id } = useParams(); // params
@@ -10,8 +10,10 @@ const TshirtDetail = () => {
  const [tshirtDetail, setTshirtDetail] = useState(null);
  const [selectedSize, setSelectedSize] = useState("");
  const [isFavorite, setIsFavorite] = useState(false);
+ const [favorites, setFavorites] = useState([]); // lista de favoritos del usuario
 
   useEffect(() => {
+    //Para reconocer la camiseta
     const fetchTshirtbyId = async () => {
    
       try {
@@ -22,15 +24,41 @@ const TshirtDetail = () => {
        console.error("Error fetching product data:", error);
       }
     };
-
     fetchTshirtbyId();
   }, [id]);
+
+    // Fetch de favoritos
+  useEffect(() => {
+    const fetchFavorites = async () => {
+      try {
+        const favs = await getAllFavoritesByUser();
+        setFavorites(favs);
+      } catch (error) {
+        console.error("Error fetching favorites:", error);
+      }
+    };
+
+    fetchFavorites();
+  }, []);
+
+   // Comprobar si la camiseta ya está en favoritos
+  useEffect(() => {
+    if (tshirtDetail && favorites.length > 0) {
+      const alreadyFavorite = favorites.some(fav => fav.tshirt_id === tshirtDetail.tshirt_id);
+     setIsFavorite(alreadyFavorite);
+    }
+  }, [favorites, tshirtDetail]);
 
   if (!tshirtDetail) return <p>Cargando...</p>;
 
   const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
 
+
   const handleAddFavorite = async () => {
+    if (isFavorite) {
+      alert("⭐ Esta camiseta ya está en tus favoritos");
+      return;
+    }
     try {
       
       await postFavorites(tshirtDetail.tshirt_id);
@@ -65,7 +93,6 @@ const TshirtDetail = () => {
       <h2>{tshirtDetail.price}€</h2>
       <h3>{tshirtDetail.type === "Liga" ? `Liga: ${tshirtDetail.league_name} `: `Categoria:${tshirtDetail.type}`}</h3>
       <p>{`nRef: #${tshirtDetail.tshirt_id}`}</p>
-      <button>Favoritos</button>
       <button onClick={handleAddFavorite}>
         {isFavorite ? "⭐ Favorito" : "Añadir a favoritos"}
       </button>
