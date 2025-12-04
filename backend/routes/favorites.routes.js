@@ -5,6 +5,8 @@ import authMiddleware from '../config/jsonWebToken.js'; //El usuario debe estar 
 const router = express.Router();
 
 //http://localhost:3000/api/favorites GET (+ token en header)
+//http://localhost:3000/api/favorites/addfavorite POST (+ body(tshirt_id)+token en header)
+//http://localhost:3000/api/favorites/deletefavorite DELETE (+ body(tshirt_id)+token en header)
 
 router.get('/', authMiddleware, favoritesControllers.getAllFavoritesByUser);
 router.post ('/addfavorite', authMiddleware,favoritesControllers.postFavorites);

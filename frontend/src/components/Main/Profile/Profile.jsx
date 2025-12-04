@@ -18,7 +18,7 @@ const Profile = () => {
     <h1>Esto es tu perfil</h1>
     <button onClick={handleLogout}>Cerrar sesión</button>
     <button><Link to="/">Home</Link></button>
-    {/* <button><Link to="/favorites">Favoritos</Link></button> */}
+    <button><Link to="/favorites">Favoritos</Link></button>
     {/* <button><Link to="/shop">Carrito</Link></button> */}
     
   </div>;

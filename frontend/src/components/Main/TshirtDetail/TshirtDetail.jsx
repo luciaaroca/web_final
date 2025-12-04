@@ -2,12 +2,14 @@ import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
 
 import {getTshirtsById} from "../../../services/tshirtsServices";
+import { postFavorites } from "../../../services/favoritesServices";
 
 const TshirtDetail = () => {
  const { id } = useParams(); // params
  //ESTADOS
  const [tshirtDetail, setTshirtDetail] = useState(null);
  const [selectedSize, setSelectedSize] = useState("");
+ const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     const fetchTshirtbyId = async () => {
@@ -28,6 +30,17 @@ const TshirtDetail = () => {
 
   const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
 
+  const handleAddFavorite = async () => {
+    try {
+      
+      await postFavorites(tshirtDetail.tshirt_id);
+      setIsFavorite(true);
+      alert("Camiseta añadida a favoritos ⭐");
+    } catch (error) {
+      console.error("Error añadiendo a favoritos:", error);
+      alert(error.msg || "Error al añadir a favoritos");
+    } 
+  };
   return <div>
        <h1>{tshirtDetail.name}</h1>
        <img
@@ -51,8 +64,11 @@ const TshirtDetail = () => {
       </select>
       <h2>{tshirtDetail.price}€</h2>
       <h3>{tshirtDetail.type === "Liga" ? `Liga: ${tshirtDetail.league_name} `: `Categoria:${tshirtDetail.type}`}</h3>
+      <p>{`nRef: #${tshirtDetail.tshirt_id}`}</p>
       <button>Favoritos</button>
-      <button>Añadir al carrito</button>
+      <button onClick={handleAddFavorite}>
+        {isFavorite ? "⭐ Favorito" : "Añadir a favoritos"}
+      </button>
 
     </div>;
 };

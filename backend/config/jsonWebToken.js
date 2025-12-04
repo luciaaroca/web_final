@@ -1,11 +1,10 @@
-// const jwt = require('jsonwebtoken')
 import jwt from 'jsonwebtoken';
 
-//import jwt from 'jsonwebtoken';
+
 
 function authMiddleware(req, res, next) {
-    //const token = req.cookies.token;
-    const token = req.headers.authorization?.split(' ')[1]; // Bearer <token>
+    const token = req.cookies?.token;
+    //const token = req.headers.authorization?.split(' ')[1]; // Bearer <token>
     // if (!token) return res.redirect('/login');
     if (!token) return res.status(401).json({ error: 'Usuario no autenticado' });
 
