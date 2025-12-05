@@ -2,6 +2,7 @@ import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
 
 import { CarritoContext } from '../../../App';
 import {getTshirtsById} from "../../../services/tshirtsServices";
@@ -52,7 +53,10 @@ const FavoriteDetail = () => {
         quantity: 1,
       };
       addToCarrito(item);
-      alert("Camiseta añadida al carrito 🛒");
+      Swal.fire({
+        title: "Camiseta añadida al carrito 🛒",
+        icon: "success",
+        })
   };
 
   return <div>

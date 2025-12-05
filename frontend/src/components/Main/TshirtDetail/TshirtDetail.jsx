@@ -1,6 +1,7 @@
 import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
 
 import { CarritoContext } from '../../../App';
 import {getTshirtsById} from "../../../services/tshirtsServices";
@@ -81,7 +82,10 @@ const TshirtDetail = () => {
         quantity: 1,
       };
       addToCarrito(item);
-      alert("Camiseta añadida al carrito 🛒");
+      Swal.fire({
+          title: "Camiseta añadida al carrito 🛒",
+          icon: "success",
+          })
   };
 
   // Función para agregar a FAVORITOS
@@ -94,11 +98,15 @@ const TshirtDetail = () => {
         
         await postFavorites(tshirtDetail.tshirt_id);
         setIsFavorite(true);
-        alert("Camiseta añadida a favoritos ⭐");
+         Swal.fire({
+          title: "Camiseta añadida a favoritos!",
+          text:  "⭐️",
+          icon: "success",
+          })
 
       } catch (error) {
         console.error("Error añadiendo a favoritos:", error);
-        alert(error.msg || "Error al añadir a favoritos");
+        alert(error.msg || "Error al añadir favorito (se requiere login)");
       } 
   };
 

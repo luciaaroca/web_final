@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CarritoContext } from "../../../App";
 import CarritoItem from "./CarritoItem/CarritoItem";
 import { postOrder } from "../../../services/ordersServices";
+import Swal from 'sweetalert2';
 
 const CarritoList = () => {
   const {  carrito, clearCarrito, currentUser} = useContext(CarritoContext);//estado actual del carrito (Context en app.js)
@@ -27,7 +28,11 @@ const CarritoList = () => {
    try {
     await postOrder(currentUser.id, carritoBackend);
     clearCarrito();
-    alert("Compra realizada con éxito!");
+    Swal.fire({
+            title: "Compra realizada con éxito 🛒",
+            text:  "¡Pronto recibirás tus pedido!",
+            icon: "success",
+            })
   } catch (error) {
     console.error("Error al crear la orden:", error);
     alert("Hubo un error al procesar la compra.");
