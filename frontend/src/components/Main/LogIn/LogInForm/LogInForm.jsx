@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom'; //para que cuando termine de hac
 import {login } from '../../../../services/userServices'
 import { AuthContext } from '../../../../App';
 import Swal from 'sweetalert2';
+import { CarritoContext } from '../../../../App';
 
 const LogInForm = () => {
   const [userData, setUserData] = useState({ email: '', password: '' });
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
-  const { setIsLogged } = useContext(AuthContext); // <-- usamos el contexto
+  const { setIsLogged } = useContext(AuthContext); // <-- usamos el contexto de auth
+  const { setCurrentUser } = useContext(CarritoContext); //<-- usamos el contexto usuario(para carrito)
 
   //Al escribir en un input ->Actualiza el estado del formulario (userData) 
   //e.target.name -> saber el campo en el que se está escribiendo ("email")
@@ -23,6 +25,7 @@ const LogInForm = () => {
     try {
       const res = await login(userData); // Llama al servicio de login
       setIsLogged(true); // <-- marcamos usuario como logueado
+      setCurrentUser(res.user);// <-- guardamos usuario
       Swal.fire({
         title: "Login Exitoso",
         text: res.msg || "¡Bienvenido!",
