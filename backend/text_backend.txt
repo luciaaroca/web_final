@@ -6,7 +6,7 @@ npm i express (Servidor Node.js)
 npm install cors (Permitir peticiones desde el frontend)
 npm install --save-dev nodemon (para npm run dev)
 npm install cookie-parser (Leer cookies en las solicitudes HTTP)
-npm install bcryptjs
+npm install bcryptjs (hashear contraseñas de forma segura)
 npm install jsonwebtoken
 
 

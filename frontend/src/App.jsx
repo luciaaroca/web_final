@@ -18,6 +18,7 @@ function App() {
 
     //CARRITO-----------------------------------------------
     //carrito es el estado del carrito (un array de objetos)
+    const [currentUser, setCurrentUser] = useState(null);
     const [carrito, setCarrito] = useState(() => {
     const saved = localStorage.getItem("carrito");//guardar en LocalStorage->"string"
       try {
@@ -88,7 +89,7 @@ function App() {
   return(
   <>
       <AuthContext.Provider value={{ isLogged, setIsLogged }}>
-      <CarritoContext.Provider value={{carrito,addToCarrito,removeFromCarrito,updateQuantity,clearCarrito}}>
+      <CarritoContext.Provider value={{carrito,addToCarrito,removeFromCarrito,updateQuantity,clearCarrito,currentUser, setCurrentUser}}>
         <BrowserRouter>
           <Header />
           <Main />

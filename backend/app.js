@@ -32,6 +32,9 @@ app.use("/api/users",userRoutes);
 //FAVORITES
 import favoritesRoutes from './routes/favorites.routes.js'
 app.use("/api/favorites",favoritesRoutes);
+//ORDERS
+import ordersRoutes from './routes/orders.routes.js'
+app.use("/api/orders",ordersRoutes);
 
 
 app.listen(PORT, () => {
