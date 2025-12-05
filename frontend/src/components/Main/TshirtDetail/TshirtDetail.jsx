@@ -1,11 +1,15 @@
 import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
+import { useContext } from 'react';
 
+import { CarritoContext } from '../../../App';
 import {getTshirtsById} from "../../../services/tshirtsServices";
 import { postFavorites , getAllFavoritesByUser } from "../../../services/favoritesServices";
 
 const TshirtDetail = () => {
  const { id } = useParams(); // params
+ const {addToCarrito} = useContext (CarritoContext)
+ 
  //ESTADOS
  const [tshirtDetail, setTshirtDetail] = useState(null);
  const [selectedSize, setSelectedSize] = useState("");
@@ -13,7 +17,7 @@ const TshirtDetail = () => {
  const [favorites, setFavorites] = useState([]); // lista de favoritos del usuario
 
   useEffect(() => {
-    //Para reconocer la camiseta
+    //Para reconocer T-SHIRT
     const fetchTshirtbyId = async () => {
    
       try {
@@ -27,7 +31,8 @@ const TshirtDetail = () => {
     fetchTshirtbyId();
   }, [id]);
 
-    // Fetch de favoritos
+
+  // Fetch de FAVORITOS
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
@@ -41,7 +46,7 @@ const TshirtDetail = () => {
     fetchFavorites();
   }, []);
 
-   // Comprobar si la camiseta ya está en favoritos
+  // Comprobar si la camiseta ya está en FAVORITOS
   useEffect(() => {
     if (tshirtDetail && favorites.length > 0) {
       const alreadyFavorite = favorites.some(fav => fav.tshirt_id === tshirtDetail.tshirt_id);
@@ -49,26 +54,54 @@ const TshirtDetail = () => {
     }
   }, [favorites, tshirtDetail]);
 
+
+
   if (!tshirtDetail) return <p>Cargando...</p>;
 
+  //Convertir las tallas (string)--> a un array
   const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
 
 
-  const handleAddFavorite = async () => {
-    if (isFavorite) {
-      alert("⭐ Esta camiseta ya está en tus favoritos");
-      return;
-    }
-    try {
-      
-      await postFavorites(tshirtDetail.tshirt_id);
-      setIsFavorite(true);
-      alert("Camiseta añadida a favoritos ⭐");
-    } catch (error) {
-      console.error("Error añadiendo a favoritos:", error);
-      alert(error.msg || "Error al añadir a favoritos");
-    } 
+  
+  // Función para agregar al CARRITO
+  const handleAddToCart = () => {
+      if (!selectedSize) {
+        alert("Selecciona una talla antes de añadir al carrito");
+        return;
+      }
+
+      //Item que se pasa -> carritoItem
+      const item = {
+        id: tshirtDetail.tshirt_id,
+        name: tshirtDetail.name,
+        image: tshirtDetail.image,
+        description: tshirtDetail.description,
+        price: tshirtDetail.price,
+        size: selectedSize, //Estado del selector de camisetas
+        quantity: 1,
+      };
+      addToCarrito(item);
+      alert("Camiseta añadida al carrito 🛒");
   };
+
+  // Función para agregar a FAVORITOS
+  const handleAddFavorite = async () => {
+      if (isFavorite) {
+        alert("⭐ Esta camiseta ya está en tus favoritos");
+        return;
+      }
+      try {
+        
+        await postFavorites(tshirtDetail.tshirt_id);
+        setIsFavorite(true);
+        alert("Camiseta añadida a favoritos ⭐");
+
+      } catch (error) {
+        console.error("Error añadiendo a favoritos:", error);
+        alert(error.msg || "Error al añadir a favoritos");
+      } 
+  };
+
   return <div>
        <h1>{tshirtDetail.name}</h1>
        <img
@@ -95,6 +128,10 @@ const TshirtDetail = () => {
       <p>{`nRef: #${tshirtDetail.tshirt_id}`}</p>
       <button onClick={handleAddFavorite}>
         {isFavorite ? "⭐ Favorito" : "Añadir a favoritos"}
+      </button>
+
+      <button onClick={handleAddToCart}>
+        Añadir al carrito
       </button>
 
     </div>;

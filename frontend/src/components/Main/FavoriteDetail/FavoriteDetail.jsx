@@ -1,16 +1,21 @@
 import React, { useEffect, useState }  from "react";
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
 
+import { CarritoContext } from '../../../App';
 import {getTshirtsById} from "../../../services/tshirtsServices";
 
 const FavoriteDetail = () => {
-   const { id } = useParams(); // params
-   //ESTADOS
-   const [tshirtDetail, setTshirtDetail] = useState(null);
-   const [selectedSize, setSelectedSize] = useState("");
+
+  const { id } = useParams(); // params
+  const {addToCarrito} = useContext (CarritoContext)
+
+  //ESTADOS
+  const [tshirtDetail, setTshirtDetail] = useState(null);
+  const [selectedSize, setSelectedSize] = useState("");
   
-    useEffect(() => {
+  useEffect(() => {
       const fetchTshirtbyId = async () => {
      
         try {
@@ -25,9 +30,31 @@ const FavoriteDetail = () => {
       fetchTshirtbyId();
     }, [id]);
   
-    if (!tshirtDetail) return <p>Cargando...</p>;
+  if (!tshirtDetail) return <p>Cargando...</p>;
   
-    const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
+  const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
+
+  // Función para agregar al CARRITO
+  const handleAddToCart = () => {
+      if (!selectedSize) {
+        alert("Selecciona una talla antes de añadir al carrito");
+        return;
+      }
+
+      //Item que se pasa -> carritoItem
+      const item = {
+        id: tshirtDetail.tshirt_id,
+        name: tshirtDetail.name,
+        image: tshirtDetail.image,
+        description: tshirtDetail.description,
+        price: tshirtDetail.price,
+        size: selectedSize, //Estado del selector de camisetas
+        quantity: 1,
+      };
+      addToCarrito(item);
+      alert("Camiseta añadida al carrito 🛒");
+  };
+
   return <div>
        <h1>{tshirtDetail.name}</h1>
        <img
@@ -52,8 +79,8 @@ const FavoriteDetail = () => {
       <h2>{tshirtDetail.price}€</h2>
       <h3>{tshirtDetail.type === "Liga" ? `Liga: ${tshirtDetail.league_name} `: `Categoria:${tshirtDetail.type}`}</h3>
       <p>{`nRef: #${tshirtDetail.tshirt_id}`}</p>
-      <button>Añadir al carrito</button>
       <button><Link to="/favorites">Volver a favoritos</Link></button>
+      <button onClick={handleAddToCart}>Añadir al carrito</button>
     </div>;
 };
 

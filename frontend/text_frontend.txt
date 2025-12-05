@@ -32,6 +32,9 @@ npx crcf src/components/Main/FavoriteContainer -j  --notest -f
 npx crcf src/components/Main/FavoriteContainer/FavoriteList -j  --notest -f
 npx crcf src/components/Main/FavoriteContainer/FavoriteList/FavoriteItem -j  --notest -f
 npx crcf src/components/Main/FavoriteDetail -j  --notest -f
+npx crcf src/components/Main/CarritoList -j  --notest -f
+npx crcf src/components/Main/CarritoList/CarritoItem -j  --notest -f
+npx crcf src/components/Main/Contact -j  --notest -f
 
 dani_10
 dani@gmail.com
