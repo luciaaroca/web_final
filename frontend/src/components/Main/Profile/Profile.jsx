@@ -46,7 +46,7 @@ const Profile = () => {
         </div>
       ) : (
         <div>
-          <h1>¿Todaviía no tienes cuenta?</h1>
+          <h1>¿Todavía no tienes cuenta?</h1>
           <Link to="/login">Inicia sesión</Link>
           <Link to="/signup">Registrase</Link>
         </div>
