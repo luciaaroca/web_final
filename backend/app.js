@@ -3,6 +3,12 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser'; //Leer req.cookies.token
+import path from "path"; //Docker
+import { fileURLToPath } from "url";
+
+// Necesario para recuperar __dirname en ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 const app = express();//Leer req.body
@@ -36,6 +42,15 @@ app.use("/api/favorites",favoritesRoutes);
 import ordersRoutes from './routes/orders.routes.js'
 app.use("/api/orders",ordersRoutes);
 
+
+if (process.env.NODE_ENV==="production") {
+  // Servir archivos estáticos del frontend con React
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+  // Manejar cualquier ruta que no sea de la API y servir el index.html de React
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Servidor backend escuchando en http://localhost:${PORT}`);

@@ -14,6 +14,7 @@ const pool = new Pool({
     port: process.env.DB_PORT,
     password: process.env.DB_PASSWORD,
     ssl: isProduction ? true : false // BBDD local (false) o remota (true)
+     //ssl: process.env.DB_SSL === 'true' // BBDD local (false) o remota (true)
 })
 
 
