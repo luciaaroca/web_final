@@ -1,7 +1,8 @@
 import React,{ createContext, useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 
-import './App.css'
+
+//COMPONENTES CENTRALES
 import Header from './components/Header/Header.jsx'
 import Main from './components/Main/Main.jsx'
 import Footer from './components/Footer/Footer.jsx'
