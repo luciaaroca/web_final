@@ -1,0 +1,40 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+//ESTILOS GENERALES
+
+//HEADER
+header{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: rgb(53, 52, 52);
+    min-height: 100vh;  
+    margin: 0;  
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* mantiene flujo vertical general */
+}
+
+main{
+   border: 5px solid blue;
+   width: 90%;
+   margin: 0 auto;
+}
+
+button {
+    padding: 10px 25px;
+    background-color: #C3C920;
+    border: none;
+    border-radius: 20px;
+    margin: 5px 5px 5px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #a9aa20;
+    }
+}

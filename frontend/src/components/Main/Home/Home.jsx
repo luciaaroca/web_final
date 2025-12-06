@@ -28,12 +28,17 @@ const Home = () => {
     fetchTshirts();
 }, []);
 
-  return <section>
+  return <section className="home">
+    <div className="banner">
+    </div>
+    <section className="homeContent">
+    <Search setTshirts={setTshirts}/> 
       <div className="users_botons">
-        <button> <Link to={`/login`}>Log In </Link></button>
-        <button> <Link to={`/signup`}>Signu Up </Link></button>
+         <Link to={`/login`}>Log In </Link>
+         <Link to={`/signup`}>Signu Up </Link>
       </div>
-      <Search setTshirts={setTshirts}/> 
+    </section>
+     
       <TshirtList  tshirts={tshirts} />
     </section>;
 };

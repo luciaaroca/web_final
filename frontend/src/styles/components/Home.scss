@@ -1,0 +1,49 @@
+.home {
+    
+    margin-top: 70px;
+ 
+}
+
+.banner {
+  position: absolute;     /* se sale del flujo */
+  top: 0;
+  left: 0;
+  width: 100vw;           /* ocupa todo el ancho */
+  height: 700px;          /* ajusta la altura */
+  background-image: url('https://images.unsplash.com/photo-1728248543062-8c371a75ce4e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;             /* detrás de todo */           /* detrás de todo */
+
+}
+.homeContent{
+    position: relative;     /* para que el contenido esté sobre el banner */
+  z-index: 1;             /* encima del banner */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;  
+}
+.users_botons{
+  margin-top: 400px;
+  text-decoration: none;
+  display: flex;
+  gap:50px;
+  justify-content: center;
+  
+  >a{
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+     &:hover {
+      color: #a9aa20; // cambio de color al pasar el mouse
+      transform: translateY(-2px); // efecto de “elevación”
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 80vh; /* más alto en pantallas pequeñas */
+  }
+}

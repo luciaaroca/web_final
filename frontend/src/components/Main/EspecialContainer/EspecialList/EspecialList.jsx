@@ -10,8 +10,8 @@ const EspecialList = ({ especialTshirts, isLoading }) => {
   }
   const renderCard = () => especialTshirts.map(tshirt => <EspecialItem key={tshirt.tshirt_id} tshirt={tshirt}/>)
   
-  return<div>
-        <section>
+  return<div className="tshirtList">
+        <section className="list">
             {renderCard()}
         </section>
     </div>;

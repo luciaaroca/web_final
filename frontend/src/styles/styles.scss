@@ -1,0 +1,13 @@
+//FICHERO DE ESTILOS PRINCIPAL
+//Aqui se ponen todas las hojas de estilos que usa tu web (no hay que poner_)
+
+@use "./views/App";
+@use "./views/index";
+
+//Cada Componente con estilos propios añadirlos aqui
+@use "./components/Header.scss";
+@use "./components/Nav.scss";
+@use "./components/TshirtList.scss";
+@use "./components/Home.scss";
+@use "./components/Search.scss";
+// @use "./components/ChristmasItem"

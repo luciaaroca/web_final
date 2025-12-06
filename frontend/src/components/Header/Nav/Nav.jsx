@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {  slide as Menu } from "react-burger-menu";
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../App'; // importamos desde App.js
-import "./Nav.css";
+
 
 const Nav = () => {
 
@@ -10,8 +10,8 @@ const Nav = () => {
   const { isLogged } = useContext(AuthContext);
 
   return (
-    <div >
-    <nav className="barNav">
+    <div className="barNav" >
+    <nav>
       <p>GolWear</p>
     </nav>
     <Menu right>

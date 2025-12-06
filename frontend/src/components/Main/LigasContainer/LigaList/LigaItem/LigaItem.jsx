@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const LigaItem = ({liga}) => {
   const name = liga.name;
   const image= liga.image;
-  return <article>
-    <h1>{name}</h1>
+  return <article className="tshirtItem">
+    <h3>{name}</h3>
        <img
         src={encodeURI(image)}
         alt={liga.name}

@@ -1,0 +1,79 @@
+.barNav{
+    background-color: #F2FF00;
+    padding: 5px 40px;
+    width: 90%;
+    margin: 20px auto 0 auto; /* ⬅ separada del borde superior */
+    display: flex;
+    position: fixed; /* ⭐ ESTO ES LO QUE QUERÍAS ⭐ */
+    top: 20px; /* Se verá siempre 20px debajo del borde al hacer scroll */
+    margin: 0 auto;
+    border-radius: 30px; 
+    z-index: 2000; 
+}
+
+/* 1. Botón hamburguesa */
+.bm-burger-button {
+  position: absolute;   /* Para que siempre esté visible */
+  margin-right: 10px;
+  margin-bottom: 8px;
+  width: 36px;
+  height: 25px;
+  right: 20px;
+  top: 20px;
+  z-index: 3000;     /* Encima de todo */
+}
+
+/* 2. Barras del botón */
+.bm-burger-bars {
+  background: #333;   /* Color de las barras */
+   border-radius: 4px; 
+}
+
+/* 3. Hover sobre las barras */
+.bm-burger-bars-hover {
+  background: #717274;
+}
+
+/* 4. Menú lateral */
+.bm-menu {
+  background: #fff;  /* Fondo del menú */
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  z-index: 1500;
+}
+
+/* 5. Items del menú */
+.menu-item {
+  display: block;
+  padding: 0.8em 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  color: #C3C920;
+}
+
+.bm-overlay {
+  background: transparent !important;
+  
+}
+.bm-menu-wrap {
+  top: 0 !important;
+}
+
+
+@media (max-width: 768px) {
+  .barNav {
+    width: 88%;          /* ocupar más espacio en pantallas pequeñas */
+    padding: 0 15px;   /* menos padding lateral */
+    flex-direction: row;  /* mantener los elementos en fila */
+    justify-content: space-between; /* separar texto y menú */
+  }
+
+  /* Ajuste del texto dentro de la barra */
+  .barNav p {
+    font-size: 1.2rem; /* reducir tamaño para móvil */
+  }
+}
+

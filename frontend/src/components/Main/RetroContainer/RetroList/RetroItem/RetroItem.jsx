@@ -5,8 +5,8 @@ const RetroItem = ({item}) => {
     const name = item.name;
   const image= item.image;
 
-  return <article>
-      <h1>{name}</h1>
+  return <article className="tshirtItem">
+      <h3>{name}</h3>
          <img
           src={encodeURI(image)}
           alt={item.name}

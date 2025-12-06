@@ -1,0 +1,29 @@
+input{
+width: 90%;
+border-radius: 30px;
+padding: 10px;
+border: 2px solid #ccc;
+outline: none;
+transition: border 0.3s;
+
+&:focus {
+      border-color: #C3C920;     // color de foco
+      box-shadow: 0 0 5px rgba(195, 201, 32, 0.5);
+    }
+}
+.search{
+    display: flex;
+    flex-wrap: wrap;
+
+    >button{
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+ input {
+    padding: 5px;
+ }
+}

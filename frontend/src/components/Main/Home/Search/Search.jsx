@@ -10,13 +10,13 @@ const Search = ({setTshirts}) => {
     const data = await getTshirtsByName(input.trim());
     setTshirts(data);  // el backend devuelve 1 elemento → lo metemos en lista
   };
-  return <div>
+  return <div className="search">
       <input
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Buscar camiseta..."
       />
-      <button onClick={handleSearch}>Buscar</button>
+      <button onClick={handleSearch} className="botonBuscar">Buscar</button>
     </div>;
 };
 
