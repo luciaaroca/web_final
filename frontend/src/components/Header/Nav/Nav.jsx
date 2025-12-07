@@ -1,29 +1,38 @@
-import React, {useContext} from "react";
+import React, {useContext,useState} from "react";
 import {  slide as Menu } from "react-burger-menu";
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../App'; // importamos desde App.js
-import "./Nav.css";
+
 
 const Nav = () => {
 
   //Contexto
   const { isLogged } = useContext(AuthContext);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleStateChange = (state) => {
+    setMenuOpen(state.isOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <div >
-    <nav className="barNav">
-      <p>GolWear</p>
+    <div className="barNav" >
+    <nav>
+     <h2  className="logo">DAM.</h2>
     </nav>
-    <Menu right>
-        <Link to="/" className="menu-item">Home</Link>
-        <Link to="/ligas" className="menu-item">Ligas</Link>
-        <Link to="/retro" className="menu-item">Retro</Link>
-        <Link to="/especiales" className="menu-item">Especiales</Link>
-        <Link to="/favorites" className="menu-item">Favoritos</Link>
-        <Link to="/profile" className="menu-item">Perfil</Link>
-        <Link to="/carrito" className="menu-item">Carrito</Link>
-        <Link to="/contact" className="menu-item">Contacto</Link>
-        {isLogged && <span className="menu-item">Usuario logueado</span>}
+    <Menu right isOpen={menuOpen} onStateChange={handleStateChange} >
+        <Link to="/" className="menu-item" onClick={closeMenu}>Home</Link>
+        <Link to="/ligas" className="menu-item" onClick={closeMenu}>Ligas</Link>
+        <Link to="/retro" className="menu-item" onClick={closeMenu}>Retro</Link>
+        <Link to="/especiales" className="menu-item" onClick={closeMenu}>Especiales</Link>
+        <Link to="/favorites" className="menu-item" onClick={closeMenu}>Favoritos</Link>
+        <Link to="/profile" className="menu-item" onClick={closeMenu}>Perfil</Link>
+        <Link to="/carrito" className="menu-item" onClick={closeMenu}>Carrito</Link>
+        <Link to="/contact" className="menu-item" onClick={closeMenu}>Contacto</Link>
+        {isLogged && <span className="menu-item menu-logged">Usuario logueado</span>}
     </Menu>
     </div>
     ) 

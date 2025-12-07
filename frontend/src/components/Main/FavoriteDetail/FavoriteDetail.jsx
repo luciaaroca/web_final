@@ -31,7 +31,7 @@ const FavoriteDetail = () => {
       fetchTshirtbyId();
     }, [id]);
   
-  if (!tshirtDetail) return <p>Cargando...</p>;
+  if (!tshirtDetail) return <p className="cargando">Cargando...</p>;
   
   const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
 
@@ -59,33 +59,38 @@ const FavoriteDetail = () => {
         })
   };
 
-  return <div>
-       <h1>{tshirtDetail.name}</h1>
-       <img
-        src={encodeURI(tshirtDetail.image)}
-        alt={tshirtDetail.name}
-        style={{ width: "200px", height: "auto" }}
-       />
+  return <article className="tshirt-detail">
+        <div className="left-side">
+          <h1>{tshirtDetail.name}</h1>
+          <img
+            src={encodeURI(tshirtDetail.image)}
+            alt={tshirtDetail.name}
+            
+          />
+       </div>
+
+      <div className="right-side">
        <p>{tshirtDetail.description}</p>
-     
-      <select
-        id="size"
-        value={selectedSize}
-        onChange={(e) => setSelectedSize(e.target.value)}
-      >
-        <option value="">Selecciona una talla</option>
-        {sizes.map((size) => (
-          <option key={size} value={size}>
-            {size}
-          </option>
-        ))}
-      </select>
-      <h2>{tshirtDetail.price}€</h2>
-      <h3>{tshirtDetail.type === "Liga" ? `Liga: ${tshirtDetail.league_name} `: `Categoria:${tshirtDetail.type}`}</h3>
-      <p>{`nRef: #${tshirtDetail.tshirt_id}`}</p>
-      <button><Link to="/favorites">Volver a favoritos</Link></button>
-      <button onClick={handleAddToCart}>Añadir al carrito</button>
-    </div>;
+        <p>{tshirtDetail.type === "Liga" ? `Liga: ${tshirtDetail.league_name} `: `Categoria:${tshirtDetail.type}`}</p>
+        <select
+          id="size"
+          value={selectedSize}
+          onChange={(e) => setSelectedSize(e.target.value)}
+        >
+          <option value="">Selecciona una talla</option>
+          {sizes.map((size) => (
+            <option key={size} value={size}>
+              {size}
+            </option>
+          ))}
+        </select>
+        <h2>{tshirtDetail.price}€</h2>
+      
+        <p>{`nRef: #${tshirtDetail.tshirt_id}`}</p>
+        <button className="favorites-button"><Link to="/favorites">Volver a favoritos</Link></button>
+        <button onClick={handleAddToCart}>Añadir al carrito</button>
+      </div>
+    </article>;
 };
 
 export default FavoriteDetail;

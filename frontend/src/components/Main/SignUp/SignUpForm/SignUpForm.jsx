@@ -69,7 +69,7 @@ const SignUpForm = () => {
         onChange={handleChange}
         required
       />
-      <button type="submit">Registrarse</button>
+      <button type="submit">Sign Up</button>
       {msg && <p className="msg">{msg}</p>}
     </form>
 };

@@ -53,7 +53,7 @@ const LogInForm = () => {
         onChange={handleChange}
         required
       />
-      <button type="submit">Iniciar sesión</button>
+      <button type="submit">Log In</button>
       {msg && <p className="msg">{msg}</p>}
     </form>;
 };

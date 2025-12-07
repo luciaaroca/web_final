@@ -260,6 +260,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "POST-ORDERS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": 16,\n  \"carrito\": [\n    { \"tshirt_id\": 1, \"quantity\": 2 },\n    { \"tshirt_id\": 3, \"quantity\": 1 }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

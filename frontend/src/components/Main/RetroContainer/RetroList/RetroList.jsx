@@ -8,8 +8,9 @@ const RetroList = ({ retro, isLoading }) => {
     return <p>No se encuentran camisetas retro</p>;
   }
    const renderCard = () => retro.map(item => <RetroItem key={item.tshirt_id} item={item}/>)
-  return <div>
-        <section>
+  return <div className="tshirtList">
+        <h1>CAMISETAS RETRO</h1>
+        <section className="list">
             {renderCard()}
         </section>
     </div>;

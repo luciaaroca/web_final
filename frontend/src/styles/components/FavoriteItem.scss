@@ -1,0 +1,29 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+.favorite-container{
+  margin-top: 120px;
+}
+.no-favorite{
+  font-weight: bold;
+  text-align: center;
+  color:variables.$h3-font-color
+}
+.deleteButton{
+    padding: 8px;
+    border-radius: 20px;
+    width: 80%;
+    background: variables.$delete-button;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    color: variables.$delete-button-color-font;
+
+    font-family: variables.$body-font;
+    font-weight: 400;
+    
+
+
+    &:hover {
+    background-color: variables.$delete-button-hover; // color más oscuro al pasar el mouse
+    transform: translateY(-2px); // efecto de “levitar”
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); // sombra ligera
+  }
+}

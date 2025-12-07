@@ -16,21 +16,20 @@ const CarritoItem = ({ product }) => {
     };
 
   return (
-    <article>
+    <article className="tshirtItem  carritoItem">
 
       <h3>{product.name}</h3>
-      <img  src={product.image} alt={product.name} style={{ width: "200px", height: "auto" }}/>
+      <img  src={product.image} alt={product.name} />
       <p>{product.description}</p>
-      <p>Talla: {product.size}</p>
-      <p>Precio: {product.price}€</p>
-
+      <p><b>Talla:</b> {product.size}</p>
+      <p><b>Precio:</b> {product.price}€</p>
       <div>
-        <button onClick={handleDecrement}>-</button>
-        <span> {product.quantity} </span>
-        <button onClick={handleIncrement}>+</button>
+        <button onClick={handleDecrement} className="carritoButtons">-</button>
+        <span  style={{ fontWeight: 'bold' }}> {product.quantity} </span>
+        <button onClick={handleIncrement} className="carritoButtons">+</button>
       </div>
 
-      <button onClick={() => removeFromCarrito(product.id, product.size)}>Eliminar</button>
+      <button onClick={() => removeFromCarrito(product.id, product.size)} className="deleteButton">Eliminar</button>
       
     </article>
   );
