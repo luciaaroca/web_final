@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser'; //Leer req.cookies.token
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './config/swagger.js';
 
 dotenv.config();
 const app = express();//Leer req.body
@@ -36,6 +38,8 @@ app.use("/api/favorites",favoritesRoutes);
 import ordersRoutes from './routes/orders.routes.js'
 app.use("/api/orders",ordersRoutes);
 
+// Endpoint para la documentación de Swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(PORT, () => {
   console.log(`Servidor backend escuchando en http://localhost:${PORT}`);
