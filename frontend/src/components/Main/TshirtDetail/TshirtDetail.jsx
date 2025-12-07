@@ -57,7 +57,7 @@ const TshirtDetail = () => {
 
 
 
-  if (!tshirtDetail) return <p>Cargando...</p>;
+  if (!tshirtDetail) return <p className="cargando">Cargando...</p>;
 
   //Convertir las tallas (string)--> a un array
   const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];

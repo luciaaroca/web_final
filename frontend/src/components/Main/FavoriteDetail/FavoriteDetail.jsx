@@ -31,7 +31,7 @@ const FavoriteDetail = () => {
       fetchTshirtbyId();
     }, [id]);
   
-  if (!tshirtDetail) return <p>Cargando...</p>;
+  if (!tshirtDetail) return <p className="cargando">Cargando...</p>;
   
   const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
 
