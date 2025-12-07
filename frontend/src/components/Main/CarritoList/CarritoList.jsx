@@ -8,7 +8,7 @@ const CarritoList = () => {
   const {  carrito, clearCarrito, currentUser} = useContext(CarritoContext);//estado actual del carrito (Context en app.js)
 
   if (carrito.length === 0) {
-    return <h2>🛒 El carrito está vacío</h2>;
+    return <h3 className="no-carrito">🛒 El carrito está vacío</h3>;
   }
 
   // Calcular el total del carrito
@@ -43,13 +43,13 @@ console.log("carrito:", carrito);
 
   //Pasar item (camiseta)-> CarritoItem
   return (
-    <section>
-      <h1>Tu carrito de la compra</h1>
-      <section>
+    <section className="tshirtList">
+      <h1>CARRITO DE LA COMPRA 🛒</h1>
+      <section className="list">
         {carrito.map((item) => ( <CarritoItem key={item.id + item.size} product={item} />))}
       </section>
       <h2>Total: {total.toFixed(2)}€</h2>
-      <button onClick={handleComprar}>Comprar</button>
+      <button onClick={handleComprar} className="buyButton">COMPRAR</button>
     </section>
   );
 };

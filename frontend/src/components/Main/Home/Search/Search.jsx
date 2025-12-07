@@ -16,7 +16,7 @@ const Search = ({setTshirts}) => {
         onChange={(e) => setInput(e.target.value)}
         placeholder="Buscar camiseta..."
       />
-      <button onClick={handleSearch} className="botonBuscar">Buscar</button>
+      <button onClick={handleSearch} className="botonBuscar">BUSCAR</button>
     </div>;
 };
 

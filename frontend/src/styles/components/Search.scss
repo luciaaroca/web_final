@@ -1,3 +1,7 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+
 input{
 width: 90%;
 border-radius: 30px;
@@ -5,11 +9,8 @@ padding: 10px;
 border: 2px solid #ccc;
 outline: none;
 transition: border 0.3s;
+background-color: variables.$white-color;
 
-&:focus {
-      border-color: #C3C920;     // color de foco
-      box-shadow: 0 0 5px rgba(195, 201, 32, 0.5);
-    }
 }
 .search{
     display: flex;

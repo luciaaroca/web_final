@@ -1,3 +1,8 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+
+
 .tshirtList{
 margin-top: 120px; 
 text-align: center;
@@ -20,10 +25,16 @@ display: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(248, 246, 246);
   border-radius: 15px;
   padding: 20px;
+  background-color: variables.$card-color;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12); // sombra inicial suave
 
+  &:hover {
+    transform: scale(1.04); // ligera ampliación al pasar mouse
+    box-shadow: 0 6px 14px rgba(0,0,0,0.22); // sombra más fuerte
+  }
+  
  >img { width: 200px;
      height: auto;
      border-radius:10px;
@@ -32,28 +43,26 @@ display: flex;
 
  >.detailButton{
     padding: 8px;
-    background-color:  #F2FF00;
-    margin-top: 10px;
+    background-color: variables.$blue-color;
+    margin-top: 30px;
     text-decoration: none;
     border-radius: 20px;
     width: 100%;
 
+    font-family: variables.$body-font;
+    font-weight: 400;
+    color: variables.$white-color;
+
+
     &:hover {
-    background-color: #e0d8b0; // color más oscuro al pasar el mouse
+    background-color: variables.$blue-color-hover; // color más oscuro al pasar el mouse
     transform: translateY(-2px); // efecto de “levitar”
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); // sombra ligera
   }
     }
-}
-
-@media (max-width: 480px) {
-  .tshirtItem {
-     flex: 1 1 20%;  // base 45% del ancho
-    max-width: 45%; // no más ancho que 45%
-    min-width: 0;   // evita que la tarjeta no se encoj
-  }
-
-  .list{
-    gap: 10px;        // menos espacio entre tarjetas en móvil
+  >h3{
+    color:variables.$h3-font-color
+    
   }
 }
+

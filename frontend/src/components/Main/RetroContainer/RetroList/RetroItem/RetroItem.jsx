@@ -12,7 +12,7 @@ const RetroItem = ({item}) => {
           alt={item.name}
           style={{ width: "200px", height: "auto" }}
         />
-         <Link to={`/detail/${item.tshirt_id}`}>Ver detalle</Link>
+         <Link to={`/detail/${item.tshirt_id}`} className="detailButton">Ver detalle</Link>
       </article>;
 };
 

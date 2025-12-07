@@ -1,0 +1,13 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.tshirt-detail{
+    @include mixins.detail;
+}
+.favorites-button{
+    >a{
+         text-decoration: none;
+         color:variables.$white-color;
+    }
+   
+}

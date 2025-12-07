@@ -1,3 +1,7 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+
 .home {
     
     margin-top: 70px;
@@ -32,11 +36,15 @@
   justify-content: center;
   
   >a{
+    background-color:variables.$white-color;
+    padding: 10px 20px;
+    border-radius: 20px;
     text-decoration: none;
-    font-size: 25px;
-    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    color: variables.$blue-color;
      &:hover {
-      color: #a9aa20; // cambio de color al pasar el mouse
+      background-color:rgb(217, 212, 212); // cambio de color al pasar el mouse
       transform: translateY(-2px); // efecto de “elevación”
     }
   }

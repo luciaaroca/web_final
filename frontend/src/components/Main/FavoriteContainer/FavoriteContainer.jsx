@@ -35,11 +35,8 @@ const FavoriteContainer = () => {
         }
     };
 
-  return <section>
-    <h1>Favoritos</h1>
-      <article>
+  return <section className="favorite-container">
         <FavoriteList favoriteTshirts={favoriteTshirts} isLoading={isLoading} handleDelete={handleDelete}/>
-      </article>
     </section>;
 };
 

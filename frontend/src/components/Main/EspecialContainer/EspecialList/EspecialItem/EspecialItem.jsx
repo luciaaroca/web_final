@@ -11,7 +11,7 @@ const EspecialItem = ({tshirt}) => {
             alt={tshirt.name}
             style={{ width: "200px", height: "auto" }}
           />
-           <Link to={`/detail/${tshirt.tshirt_id}`}>Ver detalle</Link>
+           <Link to={`/detail/${tshirt.tshirt_id}`} className="detailButton">Ver detalle</Link>
         </setion>;
 };
 

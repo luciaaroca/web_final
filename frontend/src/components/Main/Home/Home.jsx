@@ -34,8 +34,8 @@ const Home = () => {
     <section className="homeContent">
     <Search setTshirts={setTshirts}/> 
       <div className="users_botons">
-         <Link to={`/login`}>Log In </Link>
-         <Link to={`/signup`}>Signu Up </Link>
+         <Link to={`/login`}>LOG IN </Link>
+         <Link to={`/signup`}>SIGN UP </Link>
       </div>
     </section>
      

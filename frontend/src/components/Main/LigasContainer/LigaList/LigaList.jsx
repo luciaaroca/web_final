@@ -7,7 +7,7 @@ const LigaList = ({ligas}) => {
   }
   
   const renderCard = () => ligas.map(liga => <LigaItem key={liga.tshirt_id} liga={liga}/>)
-  return <div className="tshirtList">
+  return <div className="tshirtList ligaList">
     <section className="list">
     {renderCard()}
     </section>

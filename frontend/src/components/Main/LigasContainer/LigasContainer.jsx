@@ -36,7 +36,9 @@ const LigasContainer = () => {
     }
   };
   
-  return <section>
+  return <section className="liga-container">
+      <h1>LIGAS</h1>
+      <p>Seleciona una liga</p>
       <Select onChange={handleSelectChange} selected={selectedLeague} />
       <LigaList ligas={ligas} />
     </section>;;
