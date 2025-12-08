@@ -7,35 +7,7 @@ npm i axios (llamadas API)
 npm i sass (Estilos con SASS/SCSS)
 npm install react-loader-spinner
 
-***CARPETAS FRONTEND****
-npx crcf src/components/Header Main Footer -j  --notest -f
-npx crcf src/components/Header/Nav -j  --notest -f
-
-npx crcf src/components/Main/Home/Search TshirtList -j  --notest -f
-npx crcf src/components/Main/Home/TshirtList/TshirtItem -j  --notest -f
-npx crcf src/components/Main/TshirtDetail -j  --notest -f
-npx crcf src/components/Main/LigasContainer -j  --notest -f
-npx crcf src/components/Main/LigasContainer/Select LigaList -j  --notest -f
-npx crcf src/components/Main/LigasContainer/LigaList/LigaItem -j  --notest -f
-
-npx crcf src/components/Main/RetroContainer/RetroList -j  --notest -f
-npx crcf src/components/Main/RetroList -j  --notest -f
-npx crcf src/components/Main/RetroContainer/RetroList/RetroItem -j  --notest -f
-npx crcf src/components/Main/EspecialContainer -j  --notest -f
-npx crcf src/components/Main/EspecialContainer/EspecialList -j  --notest -f
-npx crcf src/components/Main/EspecialContainer/EspecialList/EspecialItem -j  --notest -f
-npx crcf src/components/Main/LogIn SignUp -j  --notest -f
-npx crcf src/components/Main/LogIn/LogInForm -j  --notest -f
-npx crcf src/components/Main/SignUp/SignUpForm -j  --notest -f
-npx crcf src/components/Main/Profile -j  --notest -f
-npx crcf src/components/Main/FavoriteContainer -j  --notest -f
-npx crcf src/components/Main/FavoriteContainer/FavoriteList -j  --notest -f
-npx crcf src/components/Main/FavoriteContainer/FavoriteList/FavoriteItem -j  --notest -f
-npx crcf src/components/Main/FavoriteDetail -j  --notest -f
-npx crcf src/components/Main/CarritoList -j  --notest -f
-npx crcf src/components/Main/CarritoList/CarritoItem -j  --notest -f
-npx crcf src/components/Main/Contact -j  --notest -f
-
+***Usuarios de ejemplo****
 dani_10
 dani@gmail.com
 1234567dDd
@@ -44,3 +16,47 @@ dani@gmail.com
 vivi_123
 vivi@gmail.com
 1234567vVv
+
+
+***Árbol de componentes***
+App --> App.jsx ->*******PROVIDER DE CONTEXT*******
+    Header 
+        Nav--->  (links rutas)
+           ->Home
+           ->Favoritas
+           ->Contacto
+           ->Perfil
+           ->Carrito
+           ->Ligas
+           ->Retro
+           ->Especiales
+
+    Main 
+        CarritoList
+            ->CarritoItem
+        Contact
+        EspecialContainer
+            ->EspecialList
+                ->EspecialItem
+        FavoriteContainer
+            ->FavoriteList
+                ->FavoriteItem
+        FavoriteDetail
+        Home
+            ->Search
+            ->TshirtList
+                ->TshirtItem
+        LigasContainer
+            ->LigaList
+                ->LigaItem
+        LogIn
+            ->LogInForm
+        Profile
+        RetroContainer
+           ->RetroList
+                ->RetroItem
+        SignUp
+            ->SignUpForm
+        TshirtDetail
+      
+ 
