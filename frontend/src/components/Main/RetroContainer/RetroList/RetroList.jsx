@@ -2,7 +2,7 @@ import React from "react";
 import RetroItem from "./RetroItem/RetroItem" 
 
 const RetroList = ({ retro, isLoading }) => {
-  if (isLoading) return <p>Cargando...</p>;
+  if (isLoading) return <p className="cargando">Cargando...</p>;
 
   if (retro.length === 0) {
     return <p>No se encuentran camisetas retro</p>;
