@@ -5,7 +5,58 @@ npm i normalize.css --> importar en main.jsx
 npm i react-router-dom (Navegación y rutas)
 npm i axios (llamadas API)
 npm i sass (Estilos con SASS/SCSS)
+npm install react-loader-spinner
 
-***CARPETAS FRONTEND****
-npx crcf src/components/Header Main Footer -j  --notest -f
-npx crcf src/components/Header/Nav -j  --notest -f
+***Usuarios de ejemplo****
+dani_10
+dani@gmail.com
+1234567dDd
+
+
+vivi_123
+vivi@gmail.com
+1234567vVv
+
+
+***Árbol de componentes***
+App --> App.jsx ->*******PROVIDER DE CONTEXT*******
+    Header 
+        Nav--->  (links rutas)
+           ->Home
+           ->Favoritas
+           ->Contacto
+           ->Perfil
+           ->Carrito
+           ->Ligas
+           ->Retro
+           ->Especiales
+
+    Main 
+        CarritoList
+            ->CarritoItem
+        Contact
+        EspecialContainer
+            ->EspecialList
+                ->EspecialItem
+        FavoriteContainer
+            ->FavoriteList
+                ->FavoriteItem
+        FavoriteDetail
+        Home
+            ->Search
+            ->TshirtList
+                ->TshirtItem
+        LigasContainer
+            ->LigaList
+                ->LigaItem
+        LogIn
+            ->LogInForm
+        Profile
+        RetroContainer
+           ->RetroList
+                ->RetroItem
+        SignUp
+            ->SignUpForm
+        TshirtDetail
+      
+ 

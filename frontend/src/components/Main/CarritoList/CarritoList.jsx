@@ -1,0 +1,58 @@
+import React, { useContext } from "react";
+import { CarritoContext } from "../../../App";
+import CarritoItem from "./CarritoItem/CarritoItem";
+import { postOrder } from "../../../services/ordersServices";
+import Swal from 'sweetalert2';
+
+const CarritoList = () => {
+  const {  carrito, clearCarrito, currentUser} = useContext(CarritoContext);//estado actual del carrito (Context en app.js)
+
+  if (carrito.length === 0) {
+    return <h3 className="no-carrito">🛒 El carrito está vacío</h3>;
+  }
+
+  // Calcular el total del carrito
+  const total = carrito.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  //Botón de comprar
+  const handleComprar = async () => {
+  if (!currentUser) {
+    alert("Debes iniciar sesión para realizar la compra");
+    return;
+  }
+    const carritoBackend = carrito.map(item => ({
+    tshirt_id: item.id,   // <-- tu id interno de la camiseta
+    quantity: item.quantity || 1
+  }));
+
+   try {
+    await postOrder(currentUser.id, carritoBackend);
+    clearCarrito();
+    Swal.fire({
+            title: "Compra realizada con éxito 🛒",
+            text:  "¡Pronto recibirás tus pedido!",
+            icon: "success",
+            })
+  } catch (error) {
+    console.error("Error al crear la orden:", error);
+    alert("Hubo un error al procesar la compra.");
+  }
+  console.log("user_id:", currentUser?.id);
+console.log("carrito:", carrito);
+};
+
+  //Pasar item (camiseta)-> CarritoItem
+  return (
+    <section className="tshirtList">
+      <h1>CARRITO DE LA COMPRA 🛒</h1>
+      <section className="list">
+        {carrito.map((item) => ( <CarritoItem key={item.id + item.size} product={item} />))}
+      </section>
+      <h2>Total: {total.toFixed(2)}€</h2>
+      <button onClick={handleComprar} className="buyButton">COMPRAR</button>
+    </section>
+  );
+};
+
+export default CarritoList;
+

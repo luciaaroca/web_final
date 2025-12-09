@@ -1,0 +1,96 @@
+import React, { useEffect, useState }  from "react";
+import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import Swal from 'sweetalert2';
+
+import { CarritoContext } from '../../../App';
+import {getTshirtsById} from "../../../services/tshirtsServices";
+
+const FavoriteDetail = () => {
+
+  const { id } = useParams(); // params
+  const {addToCarrito} = useContext (CarritoContext)
+
+  //ESTADOS
+  const [tshirtDetail, setTshirtDetail] = useState(null);
+  const [selectedSize, setSelectedSize] = useState("");
+  
+  useEffect(() => {
+      const fetchTshirtbyId = async () => {
+     
+        try {
+          const data = await getTshirtsById(id);
+          setTshirtDetail(data[0]);
+        
+        } catch (error) {
+         console.error("Error fetching product data:", error);
+        }
+      };
+  
+      fetchTshirtbyId();
+    }, [id]);
+  
+  if (!tshirtDetail) return <p className="cargando">Cargando...</p>;
+  
+  const sizes = tshirtDetail.sizes ? tshirtDetail.sizes.split(",") : [];
+
+  // Función para agregar al CARRITO
+  const handleAddToCart = () => {
+      if (!selectedSize) {
+        alert("Selecciona una talla antes de añadir al carrito");
+        return;
+      }
+
+      //Item que se pasa -> carritoItem
+      const item = {
+        id: tshirtDetail.tshirt_id,
+        name: tshirtDetail.name,
+        image: tshirtDetail.image,
+        description: tshirtDetail.description,
+        price: tshirtDetail.price,
+        size: selectedSize, //Estado del selector de camisetas
+        quantity: 1,
+      };
+      addToCarrito(item);
+      Swal.fire({
+        title: "Camiseta añadida al carrito 🛒",
+        icon: "success",
+        })
+  };
+
+  return <article className="tshirt-detail">
+        <div className="left-side">
+          <h1>{tshirtDetail.name}</h1>
+          <img
+            src={encodeURI(tshirtDetail.image)}
+            alt={tshirtDetail.name}
+            
+          />
+       </div>
+
+      <div className="right-side">
+       <p>{tshirtDetail.description}</p>
+        <p>{tshirtDetail.type === "Liga" ? `Liga: ${tshirtDetail.league_name} `: `Categoria:${tshirtDetail.type}`}</p>
+        <select
+          id="size"
+          value={selectedSize}
+          onChange={(e) => setSelectedSize(e.target.value)}
+        >
+          <option value="">Selecciona una talla</option>
+          {sizes.map((size) => (
+            <option key={size} value={size}>
+              {size}
+            </option>
+          ))}
+        </select>
+        <h2>{tshirtDetail.price}€</h2>
+      
+        <p>{`nRef: #${tshirtDetail.tshirt_id}`}</p>
+        <button className="favorites-button"><Link to="/favorites">Volver a favoritos</Link></button>
+        <button onClick={handleAddToCart}>Añadir al carrito</button>
+      </div>
+    </article>;
+};
+
+export default FavoriteDetail;

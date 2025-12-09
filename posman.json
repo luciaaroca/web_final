@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "8be91078-6e5e-478e-bed9-0dcedde94b0d",
+		"name": "Web_final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50070948",
+		"_collection_link": "https://luciaaroca-3917678.postman.co/workspace/Luc%C3%ADa-Aroca's-Workspace~debe84f7-2243-4c3b-8c9f-1bc007c64f98/collection/50070948-8be91078-6e5e-478e-bed9-0dcedde94b0d?action=share&source=collection_link&creator=50070948"
+	},
+	"item": [
+		{
+			"name": "GET_FAV",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsImlhdCI6MTc2NDc4NjQxOCwiZXhwIjoxNzY0NzkwMDE4fQ.3azfEgF8CnOYrE7BuLiL6K0Fo0c9qWzdUHnJEnXz1nY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"vivi@gmail.com\",\n  \"password\": \"1234567vVv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_FAV",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsImlhdCI6MTc2NDc4NjQxOCwiZXhwIjoxNzY0NzkwMDE4fQ.3azfEgF8CnOYrE7BuLiL6K0Fo0c9qWzdUHnJEnXz1nY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tshirt_id\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/favorites/addfavorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorites",
+						"addfavorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_FAV",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsImlhdCI6MTc2NDc5MDIzNywiZXhwIjoxNzY0NzkzODM3fQ.acc9ehld7bdWKThiL5b_QWL6n9J2HJgmdgJK4azSrS8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"tshirt_id\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/favorites/deletefavorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"favorites",
+						"deletefavorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-ALL-TSHIRTS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/tshirts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tshirts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-TSHIRT-BYNAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/tshirts/Realoviedo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tshirts",
+						"Realoviedo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-TYPE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/tshirts/type/Retro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tshirts",
+						"type",
+						"Retro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-LEAGUE_NAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/tshirts/type/Liga/La Liga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tshirts",
+						"type",
+						"Liga",
+						"La Liga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN UP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\":\"paloma_123\",\n   \"email\": \"paloma@gmail.com\",\n  \"password\": \"123456pPp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST-ORDERS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": 16,\n  \"carrito\": [\n    { \"tshirt_id\": 1, \"quantity\": 2 },\n    { \"tshirt_id\": 3, \"quantity\": 1 }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
