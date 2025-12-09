@@ -21,5 +21,9 @@ EXPOSE 3000
 # Establecer las variables de entorno en tiempo de ejecución
 ENV NODE_ENV=production
 
+# Recibir la variable desde Render
+ARG VITE_API_URL
+ENV VITE_API_URL=${VITE_API_URL}
+
 # Comando para iniciar el proyecto completo
 CMD ["npm", "start"]
