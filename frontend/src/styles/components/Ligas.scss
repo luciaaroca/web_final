@@ -1,0 +1,12 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.liga-container{
+    text-align: center;
+    margin-top:120px;
+    color:variables.$h3-font-color
+}
+.ligaList{
+    margin-top: 30px;
+}
+

@@ -1,10 +1,11 @@
 import React,{ createContext, useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 
-import './App.css'
+
+//COMPONENTES CENTRALES
 import Header from './components/Header/Header.jsx'
 import Main from './components/Main/Main.jsx'
-import Footer from './components/Footer/Footer.jsx'
+
 
 
 // Creamos el contexto
@@ -93,7 +94,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Main />
-          <Footer />
+          
         </BrowserRouter>
       </CarritoContext.Provider>
     </AuthContext.Provider>

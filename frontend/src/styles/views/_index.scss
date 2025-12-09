@@ -1,0 +1,80 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+//ESTILOS GENERALES
+
+//HEADER
+header{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: variables.$background-color;
+    min-height: 100vh;  
+    margin: 0;  
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* mantiene flujo vertical general */
+
+    font-family: variables.$body-font;
+    font-weight: 300;
+   
+}
+
+main{
+   width: 90%;
+   margin: 0 auto;
+  
+}
+
+button {
+    padding: 10px 25px;
+    background-color: variables.$blue-color;
+    border: none;
+    border-radius: 20px;
+    margin: 5px 5px 5px 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: variables.$white-color;
+     
+
+    &:hover {
+      background-color: variables.$blue-color-hover;
+      transform: translateY(-2px);
+    }
+   
+}
+
+select{
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-family: variables.$body-font;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+
+p{
+ font-size: 18px;
+}
+h1{
+    font-family: variables.$titles-font;
+    font-weight: 900;
+    font-size: 40px;
+    color: variables.$blue-color
+}
+
+a{
+    font-family: variables.$body-font;  
+}
+
+h2{
+    color: variables.$h3-font-color;
+}

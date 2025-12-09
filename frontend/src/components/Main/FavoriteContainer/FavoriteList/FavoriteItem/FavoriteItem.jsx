@@ -4,16 +4,15 @@ import { Link } from "react-router-dom";
 const FavoriteItem = ({favoriteT,handleDelete}) => {
   const name = favoriteT.name;
   const image= favoriteT.image;
-  return <article>
-         <h1>{name}</h1>
+  return <article className="tshirtItem">
+         <h3>{name}</h3>
          <img
           src={encodeURI(image)}
           alt={favoriteT.name}
           style={{ width: "200px", height: "auto" }}
         />
-        <button onClick={() => handleDelete(favoriteT.tshirt_id)}>Borrar</button>
-        {/* <Link to={`/detail/${favoriteT.tshirt_id}`}>Ver detalle</Link> */}
-        <Link to={`/detail/${favoriteT.tshirt_id}/favorites`}>Ver detalle</Link>
+        <Link to={`/detail/${favoriteT.tshirt_id}/favorites`}  className="detailButton">Ver detalle</Link>
+        <button onClick={() => handleDelete(favoriteT.tshirt_id)} className="deleteButton">Borrar</button>
       </article>;
 };
 

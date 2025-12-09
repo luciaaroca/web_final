@@ -4,7 +4,7 @@ import React from "react";
 const Select = ({ onChange, selected }) => {
    const leagues = ["La Liga", "Premier League", "Serie A", "Bundesliga", "Ligue 1"]
 
-  return   <select value={selected} onChange={(e) => onChange(e.target.value)}>
+  return   <select value={selected} onChange={(e) => onChange(e.target.value)} className="select-league">
       <option value="">Todas las ligas</option>
       {leagues.map((league) => (
         <option key={league} value={league}>

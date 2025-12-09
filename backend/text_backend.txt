@@ -8,6 +8,7 @@ npm install --save-dev nodemon (para npm run dev)
 npm install cookie-parser (Leer cookies en las solicitudes HTTP)
 npm install bcryptjs (hashear contraseñas de forma segura)
 npm install jsonwebtoken
+npm install swagger-ui-express
 
 
 ***CARPETAS BACKEND***

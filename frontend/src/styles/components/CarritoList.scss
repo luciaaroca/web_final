@@ -1,0 +1,32 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+.carritoItem{
+    >p{
+        color: variables.$h3-font-color;
+        font-size:16px;
+    }
+   
+}
+.carritoButtons{
+padding: 5px 15px; 
+background-color: variables.$card-color;
+color: variables.$blue-color;
+font-weight: bold;
+font-size: 30px;
+      &:hover {
+      background-color: variables.$grey;
+      transform: translateY(-2px);
+    }
+
+}
+
+.buyButton{
+    width: 300px;
+}
+.no-carrito{
+    margin-top: 120px;
+    text-align: center;
+    color:variables.$h3-font-color;
+    font-weight: bold;
+}

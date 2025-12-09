@@ -35,20 +35,24 @@ const Profile = () => {
       console.error("Error en logout", error);
       }
     };
-  return <div>
+  return <div className="profile-container">
       <div>
       {isLogged ? (
         <div>
           <h1>Bienvenido a tu perfil</h1>
-          <button onClick={handleLogout}>Cerrar sesión</button>
-          <Link to="/">Home</Link> | 
-          <Link to="/favorites">Favoritos</Link>
+          <div className="profile-button-container1">
+            <button onClick={handleLogout} className="profile-button" >Cerrar sesión</button>
+            <button ><Link to="/" >Home</Link> </button>
+            <button><Link to="/favorites">Favoritos</Link></button>
+          </div>
         </div>
       ) : (
         <div>
           <h1>¿Todavía no tienes cuenta?</h1>
-          <Link to="/login">Inicia sesión</Link>
-          <Link to="/signup">Registrase</Link>
+          <div className="profile-button-container">
+            <Link to="/login" className="profile-button">LOG IN</Link>
+            <Link to="/signup" className="profile-button">SIGN UP</Link>
+          </div>
         </div>
       )}
     </div>

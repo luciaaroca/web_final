@@ -1,0 +1,30 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+
+input{
+width: 90%;
+border-radius: 30px;
+padding: 10px;
+border: 2px solid #ccc;
+outline: none;
+transition: border 0.3s;
+background-color: variables.$white-color;
+
+}
+.search{
+    display: flex;
+    flex-wrap: wrap;
+
+    >button{
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+ input {
+    padding: 5px;
+ }
+}

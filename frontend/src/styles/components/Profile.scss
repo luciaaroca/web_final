@@ -1,0 +1,62 @@
+@use '../utils/variables.scss' as variables;
+@use '../utils/mixins.scss' as mixins;
+
+
+.profile-container{
+    margin-top: 150px;
+    text-align: center;
+ 
+}
+.profile-button{
+  background-color: variables.$blue-color;
+  color: variables.$white-color;
+  text-decoration: none;
+  padding:10px 20px;
+  border-radius: 20px;
+  
+  margin-left: 10px;
+  margin-right: 10px;
+
+  &:hover {
+      background-color: variables.$blue-color-hover; // cambio de color al pasar el mouse
+      transform: translateY(-2px); // efecto de “elevación”
+  }
+    
+  
+}
+.profile-button-container{
+    margin-top: 120px;
+}
+
+.login-container, .signup-container{
+    margin-top: 120px;
+    >h2{
+        margin-bottom: 30px;
+    }
+}
+
+.login-form, .signup-form{
+  
+    >input{
+        margin-bottom: 15px;
+      
+    }
+   
+}
+
+
+.profile-button-container1{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    gap:10px;
+    width: 200px;
+   >button{
+        >a{
+            text-decoration: none;
+            color:variables.$white-color
+        }
+   }
+}
