@@ -1,8 +1,8 @@
 # Proyecto: Tienda Online de Camisetas de Fútbol ⚽️
 
- Este proyecto consiste en el desarrollo una **web completa de venta de camisetas**, abarcando tanto la parte de desarrollo **backend** como el **frontend**.
+ Este proyecto consiste en el desarrollo una **web SPA de venta de camisetas**, abarcando tanto la parte de desarrollo **backend** como el **frontend**.
 
-En el **backend**, se implementará una API con Node.js y Express, gestionando usuarios, productos, favoritos y órdenes de compra, con autenticación mediante JWT y validación de datos.
+En el **backend**, se implementará una API con Node.js y Express, gestionando usuarios, camisetas, favoritos y órdenes de compra, con autenticación mediante JWT y validación de datos.
 
 En el **frontend**, se construirá una interfaz interactiva y responsiva con **React**, permitiendo a los usuarios navegar por el catálogo, filtrar por tipo o liga, añadir camisetas a favoritos y gestionar su carrito de la compra.
 
