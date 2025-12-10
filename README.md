@@ -22,7 +22,7 @@ El objetivo es ofrecer una **aplicación web completa y funcional**, combinando 
 - Frontend: React
 - BBDD: PostgreSQL
 - Backend: Express.js, Node.js
-- Deploy: Render(API,BBDD SQL)????
+- Deploy: Render(BBDD SQL)
 - Autenticación: JWT
 
 ## Librerías 📕

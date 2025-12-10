@@ -42,9 +42,9 @@ const getTshirtsByName =  async (req, res) => {
 const getTshirtsById  =  async (req, res) => {
     try{
         const { tshirt_id } = req.params;
-        console.log("ID recibido:", tshirt_id );
+        //console.log("ID recibido:", tshirt_id );
       let  tshirts = await  tshirtModel.getTshirtsById (tshirt_id );
-      console.log("Resultado de la query:", tshirts);
+      //console.log("Resultado de la query:", tshirts);
       res.status(200).json(tshirts); 
     }catch(error){
        console.error('Error al buscar este nombre', error);
