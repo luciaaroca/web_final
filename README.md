@@ -11,7 +11,18 @@ Se integrará una **base de datos PostgreSQL** para almacenar usuarios, camiseta
 El objetivo es ofrecer una **aplicación web completa y funcional**, combinando un backend robusto con un frontend moderno y dinámico.
 
 ![Mockup Web](./assets/mockup.jpeg)
+![Ver video](./assets/video_ordenador.mp4)
 
+## Funcinalidades ⚙️
+- Ver **camisetas** disponibles
+- Filtrado de camisetas por coincidencia de nombre
+- Secciones: Liga, Especiales, Retro
+- **Usuarios**: LogIn, SignUp, LogOut(Con validación Regex)
+- **Favoritos**: añadir, borrar, ver (necesidad de estar logueado)
+- **Carrito**: añadir a carrito (mediante useContext) + agregar pedidos a la bbdd
+- **Local Storage**: para guardar los datos del carrito aún recargando la página
+- **Autenticación JWT** al hacer LogIn
+- Adaptabilidad a móvil y ordernador -> **Web responsive**
 
 
 
