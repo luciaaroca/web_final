@@ -13,6 +13,10 @@ El objetivo es ofrecer una **aplicación web completa y funcional**, combinando 
 ![Mockup Web](./assets/mockup.jpeg)
 ![Ver video](./assets/video_ordenador.gif)
 
+
+## Modelo de datos relacional
+![Modelo de datos](./assets/modelo.datos.jpg)
+
 ## Funcinalidades ⚙️
 - Ver **camisetas** disponibles
 - Filtrado de **camisetas** por coincidencia de nombre
