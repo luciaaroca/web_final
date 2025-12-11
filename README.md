@@ -1,6 +1,6 @@
 # Proyecto: Tienda Online de Camisetas de Fútbol ⚽️
 
- Este proyecto consiste en el desarrollo una **web SPA de venta de camisetas**, abarcando tanto la parte de desarrollo **backend** como el **frontend**.
+ Este proyecto consiste en el desarrollo de una **web SPA (Single Page Aplication) de venta de camisetas**, abarcando tanto la parte de desarrollo **backend** como el **frontend**.
 
 En el **backend**, se implementará una API con Node.js y Express, gestionando usuarios, camisetas, favoritos y órdenes de compra, con autenticación mediante JWT y validación de datos.
 
@@ -11,20 +11,19 @@ Se integrará una **base de datos PostgreSQL** para almacenar usuarios, camiseta
 El objetivo es ofrecer una **aplicación web completa y funcional**, combinando un backend robusto con un frontend moderno y dinámico.
 
 ![Mockup Web](./assets/mockup.jpeg)
-![Ver video](./assets/video_ordenador.mp4)
+![Ver video](./assets/video_ordenador.gif)
 
 ## Funcinalidades ⚙️
 - Ver **camisetas** disponibles
-- Filtrado de camisetas por coincidencia de nombre
-- Secciones: Liga, Especiales, Retro
+- Filtrado de **camisetas** por coincidencia de nombre
+- **Secciones**: Liga, Especiales, Retro
 - **Usuarios**: LogIn, SignUp, LogOut(Con validación Regex)
 - **Favoritos**: añadir, borrar, ver (necesidad de estar logueado)
 - **Carrito**: añadir a carrito (mediante useContext) + agregar pedidos a la bbdd
 - **Local Storage**: para guardar los datos del carrito aún recargando la página
 - **Autenticación JWT** al hacer LogIn
 - Adaptabilidad a móvil y ordernador -> **Web responsive**
-
-
+- Documentación de las rutas con **Swagger**
 
 ## Tecnologías usadas 💻
 
@@ -146,23 +145,32 @@ VITE_API_URL=
             ->SignUpForm
         ->TshirtDetail
 
+## Probar rutas con Swagger
+```bash
+http://localhost:3000/api-docs
+```
+
 ## Lecciones aprendidas💡
 
-- Crear nuestra API con Node.js y Express.
+- Crear mi propia API con Node.js y Express.
 - Crear endpoints de BBDD PostgreSQL.
 - Trabajar con React y sus Componentes.
 - Uso de librerías.
 - Estilos con SASS.
 - Autenticación con JWT.
+- Uso de Hooks de React (useState, useEffect, useContext)
+
 
 ## Funcionalidades futuras 🗒️
 
-- Agregar una pasarela de pago a la parte del carrito de la compra.
-- Añadir todos los productos disponibles.
+- Nueva vista-> Compra: esto irá acompañdo de su correspondiente pasarela de pago.
+- Completar la web con todos los productos reales disponibles en la tienda.
+- Despliegue en Render en el que las fotos se vean correctamente subiéndolas a una plataforma que permita su visualización.
 
 ## Autor 👩🏽‍💻
 
-- Nombre: Lucía Aroca Solís
-- LinkedIn: linkedin.com/in/lucía-aroca-solís-b652552b4/?skipRedirect=true
+- Nombre: **Lucía Aroca Solís**
+- LinkedIn: https://www.linkedin.com/in/luc%C3%ADa-aroca-sol%C3%ADs/
 - GitHub: https://github.com/luciaaroca/web_final.git
+
 
